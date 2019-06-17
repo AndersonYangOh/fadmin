@@ -1,0 +1,84 @@
+{
+  "name": "fadmin",
+  "description": "Laravel + adminlte.",
+  "keywords": [
+    "laravel",
+    "admin"
+  ],
+  "repository": "https://github.com/yiluohan1234/fadmin",
+  "scripts": {
+    "postdeploy": "composer install;php artisan migrate --force --seed"
+  },
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "env": {
+    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-php",
+    "APP_KEY": {
+      "description": "This should be changed with `heroku config:set APP_KEY=xxx` after the initial deploy. Run `heroku run php artisan key:generate --show` to generate a new app key.",
+      "value": "base64:C7or0bVsDpkAZ47NhqgcDDFyFph4FxRqtM2GshHJbmg=",
+      "required": true
+    },
+    "APP_ENV": {
+      "description": "API environment.",
+      "value": "production",
+      "required": true
+    },
+    "APP_NAME": {
+      "description": "APP name.",
+      "value": "fadmin",
+      "required": false
+    },
+    "IS_IN_HEROKU": {
+      "description": "is or not in heroku.",
+      "value": "true",
+      "required": true
+    },
+    "MAIL_DRIVER": {
+      "description": "Mail driver (optional).",
+      "value": "smtp",
+      "required": false
+    },
+    "MAIL_ENCRYPTION": {
+      "description": "Mail Encryption (optional).",
+      "value": "tls",
+      "required": false
+    },
+    "MAIL_FROM": {
+      "description": "Email addresss to use when sending mail. (optional)",
+      "value": "laravel@admin.com",
+      "required": false
+    },
+    "MAIL_FROM_NAME": {
+      "description": "Name for the email address. (optional)",
+      "value": "laravel admin",
+      "required": false
+    },
+    "MAIL_HOST": {
+      "description": "Host of the mail server.",
+      "required": false
+    },
+    "MAIL_USERNAME": {
+      "description": "Mail server username.",
+      "required": false
+    },
+    "MAIL_PASSWORD": {
+      "description": "Mail server password.",
+      "required": false
+    },
+    "MAIL_PORT": {
+      "description": "Port of mail server.",
+      "required": false
+    },
+    "APP_LOCALE": {
+      "description": "app language.",
+      "value": "zh-CN",
+      "required": false
+    },
+    "APP_LOG": {
+      "description": "log formatter.",
+      "value": "daily",
+      "required": false
+    }
+  }
+}
